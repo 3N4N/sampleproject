@@ -102,8 +102,8 @@ classifiers = [  # Optional
 #
 # For an analysis of this field vs pip's requirements files see:
 # https://packaging.python.org/discussions/install-requires-vs-requirements/
-dependencies = [ # Optional
-  "peppercorn"
+dependencies = [
+  "django>2.1 ; platform_system == 'Linux'",
 ]
 
 # List additional groups of dependencies here (e.g. development
@@ -115,7 +115,10 @@ dependencies = [ # Optional
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies] # Optional
-dev = ["check-manifest"]
+dev = [
+  "check-manifest",
+  "numpy >= 1.20.0",
+]
 test = ["coverage"]
 
 # List URLs that are relevant to your project
@@ -150,5 +153,6 @@ package-data = {"sample" = ["*.dat"]}
 [build-system]
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
-requires = ["setuptools>=43.0.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["setuptools>=43.0.0", "wheel", "setuptools-scm"]
+build-backend = "backend"
+backend-path = [ "_custom_build" ]
