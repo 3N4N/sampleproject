@@ -103,7 +103,7 @@ classifiers = [  # Optional
 # For an analysis of this field vs pip's requirements files see:
 # https://packaging.python.org/discussions/install-requires-vs-requirements/
 dependencies = [
-  "django>2.1 ; platform_system == 'Linux'",
+  "django>2.1",
 ]
 
 # List additional groups of dependencies here (e.g. development
@@ -157,16 +157,8 @@ requires = [
   "setuptools>=43.0.0",
   "wheel",
   "setuptools-scm",
-  "setuptools-pipfile @ git+ssh://github.com/3N4N/setuptools-pipfile@enan",
+  "setuptools-gitmodules @ git+ssh://github.com/3N4N/setuptools-gitmodules",
 ]
 build-backend = "setuptools.build_meta"
-# build-backend = "backend"
-# backend-path = [ "_custom_build" ]
 
-[tool.setuptools-pipfile]
-
-# [project.entry-points."distutils.setup_keywords"]
-# use_pipfile = "setup:use_pipfile"
-
-# [project.entry-points."setuptools.finalize_distribution_options"]
-# finalize_dist = "setup:finalize_dist"
+[tool.setuptools-gitmodules]
