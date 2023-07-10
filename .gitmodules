@@ -1,0 +1,3 @@
+[submodule "lib/libcalc"]
+	path = lib/libcalc
+	url = ssh://github.com/3N4N/libcalc
