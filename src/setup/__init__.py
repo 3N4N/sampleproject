@@ -1,8 +1,11 @@
 from pathlib import Path
+from setuptools.dist import Distribution
 
-def finalize_dist(dist, path='pyproject.toml'):
-    path = Path(path)
-    if not (path.exists() and path.is_file()):
+def use_pipfile(dist, attr, value):
+    print(f" ============================= use_pipfile_")
+    if not value:
         return
 
-    print(f" ============================= finalize_dist")
+
+def finalize_dist(Distribution):
+    print(f" ============================= finalize_dist_")

@@ -143,19 +143,30 @@ test = ["coverage"]
 [project.scripts]  # Optional
 sample = "sample:main"
 
-# # This is configuration specific to the `setuptools` build backend.
-# # If you are using a different build backend, you will need to change this.
-# [tool.setuptools]
-# # If there are data files included in your packages that need to be
-# # installed, specify them here.
+# This is configuration specific to the `setuptools` build backend.
+# If you are using a different build backend, you will need to change this.
+[tool.setuptools]
+# If there are data files included in your packages that need to be
+# installed, specify them here.
 # package-data = {"sample" = ["*.dat"]}
 
 [build-system]
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
-requires = ["setuptools>=43.0.0", "wheel", "setuptools-scm"]
-build-backend = "backend"
-backend-path = [ "_custom_build" ]
+requires = [
+  "setuptools>=43.0.0",
+  "wheel",
+  "setuptools-scm",
+  "setuptools-pipfile @ git+ssh://github.com/3N4N/setuptools-pipfile@enan",
+]
+build-backend = "setuptools.build_meta"
+# build-backend = "backend"
+# backend-path = [ "_custom_build" ]
 
-[project.entry-points."setuptools.finalize_distribution_options"]
-finalize_dist = "setup:finalize_dis"
+[tool.setuptools-pipfile]
+
+# [project.entry-points."distutils.setup_keywords"]
+# use_pipfile = "setup:use_pipfile"
+
+# [project.entry-points."setuptools.finalize_distribution_options"]
+# finalize_dist = "setup:finalize_dist"

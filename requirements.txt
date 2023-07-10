@@ -1,0 +1,4 @@
+-e lib/libcalc/
+
+# for creating bin dist
+build
