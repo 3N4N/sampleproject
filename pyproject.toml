@@ -1,6 +1,6 @@
 [project]
 name = "sampleproject"  # Required
-version = "3.0.0"  # Required
+# version = "3.0.0"  # Required
 description = "A sample Python project"  # Optional
 readme = "README.md" # Optional
 requires-python = ">=3.6"
@@ -39,7 +39,7 @@ classifiers = [  # Optional
   "Programming Language :: Python :: 3 :: Only",
 ]
 
-dynamic = ["dependencies"]
+dynamic = ["dependencies", "version"]
 
 [project.optional-dependencies] # Optional
 dev = [
@@ -77,8 +77,17 @@ dependencies = {file = ["requirements.txt"]}
 [build-system]
 requires = [
   "wheel",
+  # "../setuptools/;python_version>='3.8'",
   "setuptools>=61;python_version>='3.8'",
   "setuptools>=40;python_version=='3.6'",
-  "../setuptools-movandi.git/callable-parser/",
+  "setuptools_scm[toml]",
+  # "../setuptools_scm[toml]",
+  "../setuptools-movandi.git/feat-python3.6/",
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "src/sample/_version.py"
+git_describe_command = 'git describe --tags --long --match "v*"'
+version_scheme = "setuptools_movandi"
+local_scheme = "no-local-version"
