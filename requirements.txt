@@ -1,4 +1,2 @@
--e lib/libcalc/
-
-# for creating bin dist
-build
+-r requirements/private.in
+-r requirements/public.in
