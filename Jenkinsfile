@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    docker.image('ubuntu-python:3.9').inside {
+                    docker.image('ubuntu-python:3.10').inside {
                         sh 'python3 --version'
                         sh 'pip3 --version'
                         sh 'export GIT_BRANCH=master'
