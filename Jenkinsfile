@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'apt-get install python3-venv'
                 sh 'python3 -m venv env'
                 sh 'source env/bin/activate'
                 sh 'export GIT_BRANCH=master'
