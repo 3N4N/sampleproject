@@ -80,9 +80,10 @@ requires = [
   # "../setuptools/;python_version>='3.8'",
   "setuptools>=61;python_version>='3.8'",
   "setuptools>=40;python_version=='3.6'",
-  "setuptools_scm[toml]",
-  # "../setuptools_scm[toml]",
-  "../setuptools-movandi.git/feat-python3.6/",
+  "setuptools_scm",
+  # "../setuptools_scm",
+  # "../setuptools-movandi.git/feat-python3.6/",
+  "./lib/setuptools-movandi",
 ]
 build-backend = "setuptools.build_meta"
 
